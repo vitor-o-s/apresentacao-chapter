@@ -1,0 +1,10 @@
+stages:
+  - linting
+  
+isort:
+  stage: linting
+  image: registry.gitlab.com/mafda/python-linting
+  script:
+    - isort . --check-only
+  only:
+    - pull_request
